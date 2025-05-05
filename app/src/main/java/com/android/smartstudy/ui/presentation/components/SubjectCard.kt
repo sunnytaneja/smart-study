@@ -16,6 +16,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.max
 import com.android.smartstudy.R
 
 @Composable
@@ -45,7 +46,8 @@ fun SubjectCard(
             )
             Text(
                 text = subjectName, style = MaterialTheme.typography.headlineMedium,
-                color = Color.White
+                color = Color.White,
+                maxLines = 1
             )
         }
     }

@@ -1,9 +1,12 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.jetbrainsKotlinKsp)
+//    alias(libs.plugins.jetbrainsKotlinKsp)
     alias(libs.plugins.hiltPlugin)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.ksp)
+//    alias(libs.plugins.hilt.android)
+
 }
 
 android {
@@ -63,6 +66,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -79,16 +83,20 @@ dependencies {
     ksp(libs.ksp)
 
     // Room
-//    val roomVersion = "2.5.2"
     implementation(libs.androidx.room.runtime)
     ksp(libs.androidx.room.compiler)
     implementation(libs.androidx.room.ktx)
 
     //Dagger-Hilt
     implementation(libs.hilt.android)
-    ksp(libs.hilt.android.compiler)
-    ksp(libs.androidx.hilt.compiler)
+//    ksp(libs.hilt.android.compiler)
+//    ksp(libs.androidx.hilt.compiler)
     implementation(libs.androidx.hilt.navigation.compose)
+//    implementation (libs.androidx.hilt.lifecycle.viewmodel)
+    implementation(libs.androidx.lifecycle.viewmodel)
+    implementation(libs.androidx.navigation.compose)
+    ksp(libs.hilt.compiler)
+
 
     //fonts
     implementation(libs.androidx.ui.text.google.fonts)
@@ -96,5 +104,9 @@ dependencies {
     //Desugaring
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
+//    implementation (libs.hilt.android)
+//    ksp (libs.hilt.android.compiler)
+//    implementation (libs.androidx.hilt.lifecycle.viewmodel)
+//    ksp(libs.androidx.hilt.compiler)
 
 }
